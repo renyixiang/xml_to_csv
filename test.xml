@@ -1,0 +1,466 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dvreferences generated="2017-05-23T17:23:35Z" schema-version="1.1">
+  <!-- This document is provided as-is.  Data may be improved without notice.  For best results, import all data as new each release. -->
+  <filters>
+    <filter uuid="00000001-0001-0001-0001-000000000027" id="27" src="DigitalVaccine">
+      <meta ips-version="3.0.0.1000 and after" ngfw-version="1.0.0.1000 and after" tps-version="4.0.0.1000 and after">
+        <name>IP Options: Record Route (RR)</name>
+        <description>This filter detects the Record Route option (option number 7).
+
+IP options are rarely used by valid software applications, but
+are often used by attackers for malicious purposes. In general,
+any packets that carry IP options should be viewed as suspicious
+and should be denied at the firewall.
+
+References
+  http://www.iana.org/assignments/ip-parameters
+  http://www.ietf.org/rfc/rfc0791.txt</description>
+        <category>Network Equipment</category>
+        <severity>Moderate</severity>
+        <deployments>
+          <deployment deployment="Default" active="false" actionset="Disabled"/>
+        </deployments>
+        <impacts>
+          <falsepositive id="1">False Positive potential for this filter is minimal to none.</falsepositive>
+          <performance id="1">This filter does not have any known performance impact issues.</performance>
+        </impacts>
+        <protocol taxonomy="ip">IP</protocol>
+      </meta>
+      <affected>
+        <products>
+          <product vendor="FreeBSD" product="FreeBSD" version="3.2">FreeBSD 3.2</product>
+          <product vendor="Linux" product="Linux Kernel" version="2.2.10">Linux Linux Kernel 2.2.10</product>
+          <product vendor="Debian" product="Debian Linux" version="2.1">Debian Debian Linux 2.1</product>
+          <product vendor="Linux" product="Linux Kernel" version="2.0">Linux Linux Kernel 2.0</product>
+          <product vendor="Linux" product="Linux Kernel" version="2.0.34">Linux Linux Kernel 2.0.34</product>
+          <product vendor="Linux" product="Linux Kernel" version="2.0.35">Linux Linux Kernel 2.0.35</product>
+          <product vendor="Linux" product="Linux Kernel" version="2.0.36">Linux Linux Kernel 2.0.36</product>
+          <product vendor="Linux" product="Linux Kernel" version="2.0.37">Linux Linux Kernel 2.0.37</product>
+          <product vendor="Linux" product="Linux Kernel" version="2.0.38">Linux Linux Kernel 2.0.38</product>
+          <product vendor="Redhat" product="Linux" version="5.2" architecture="i386">Redhat Linux 5.2 i386</product>
+          <product vendor="Cisco" product="CBOS" version="2.3.8">Cisco CBOS 2.3.8</product>
+        </products>
+      </affected>
+      <cves>
+        <cve id="CVE-1999-1339">
+          <base score="5.0" metric="AV:N/AC:L/Au:N/C:N/I:N/A:P"/>
+        </cve>
+        <cve id="CVE-1999-0986">
+          <base score="5.0" metric="AV:N/AC:L/Au:N/C:N/I:N/A:P"/>
+        </cve>
+        <cve id="CVE-2001-0752">
+          <base score="5.0" metric="AV:N/AC:L/Au:N/C:N/I:N/A:P"/>
+        </cve>
+      </cves>
+      <cpes>
+        <cpe>cpe:/o:cisco:cbos:2.3.8</cpe>
+        <cpe>cpe:/o:debian:debian_linux:2.1</cpe>
+        <cpe>cpe:/o:freebsd:freebsd:3.2</cpe>
+        <cpe>cpe:/o:linux:linux_kernel:2.0</cpe>
+        <cpe>cpe:/o:linux:linux_kernel:2.0.34</cpe>
+        <cpe>cpe:/o:linux:linux_kernel:2.0.35</cpe>
+        <cpe>cpe:/o:linux:linux_kernel:2.0.36</cpe>
+        <cpe>cpe:/o:linux:linux_kernel:2.0.37</cpe>
+        <cpe>cpe:/o:linux:linux_kernel:2.0.38</cpe>
+        <cpe>cpe:/o:linux:linux_kernel:2.2.10</cpe>
+        <cpe>cpe:/o:redhat:linux:5.2::i386</cpe>
+      </cpes>
+      <references>
+        <bid id="870">http://www.securityfocus.com/bid/870</bid>
+        <generic-url>http://www.kernel.org/pub/linux/kernel/v2.2/patch-2.2.11.gz</generic-url>
+      </references>
+      <vulnerability>
+        <type>Denial of Service</type>
+        <locality>Local</locality>
+        <locality>Remote</locality>
+        <result>Denial Of Service</result>
+      </vulnerability>
+    </filter>
+    <filter uuid="00000001-0001-0001-0001-000000000032" id="32" src="DigitalVaccine">
+      <meta ips-version="3.0.0.1000 and after" ngfw-version="1.0.0.1000 and after" tps-version="4.0.0.1000 and after">
+        <name>IP Options: Time Stamp (TS)</name>
+        <description>This filter detects the Time Stamp option (option number 4)
+described in RFC 791. IP options are rarely used by valid software
+applications, but are often used by attackers for malicious purposes.
+In general, any packets that carry IP options should be viewed as
+suspicious and be denied at the firewall.
+
+Attackers can use the timestamp option to discover information about
+internal network topology and to discover information about routers
+and congestion points on a network path. Incorrectly formatted
+timestamp options have also been used in denial of service attacks.</description>
+        <category>Network Equipment</category>
+        <severity>Moderate</severity>
+        <deployments>
+          <deployment deployment="Default" active="false" actionset="Disabled"/>
+          <deployment deployment="Performance-Optimized" active="true" actionset="Block / Notify"/>
+        </deployments>
+        <impacts>
+          <falsepositive id="1">False Positive potential for this filter is minimal to none.</falsepositive>
+          <performance id="1">This filter does not have any known performance impact issues.</performance>
+        </impacts>
+        <protocol taxonomy="ip">IP</protocol>
+      </meta>
+    </filter>
+    <filter uuid="00000001-0001-0001-0001-000000000034" id="34" src="DigitalVaccine">
+      <meta ips-version="3.0.0.1000 and after" ngfw-version="1.0.0.1000 and after" tps-version="4.0.0.1000 and after">
+        <name>IP Options: Security (SEC)</name>
+        <description>This filter detects the US Department of Defense Basic Security
+option (option number 2) described in RFC 1108.
+
+IP options are rarely used by valid software applications, but
+are often used by attackers for malicious purposes. In general,
+any packets that carry IP options should be viewed as suspicious
+and be denied at the firewall.
+
+References:
+  http://www.iana.org/assignments/ip-parameters
+  http://www.ietf.org/rfc/rfc1108.txt</description>
+        <category>Network Equipment</category>
+        <severity>Low</severity>
+        <deployments>
+          <deployment deployment="Default" active="false" actionset="Disabled"/>
+        </deployments>
+        <impacts>
+          <falsepositive id="1">False Positive potential for this filter is minimal to none.</falsepositive>
+          <performance id="1">This filter does not have any known performance impact issues.</performance>
+        </impacts>
+        <protocol taxonomy="ip">IP</protocol>
+      </meta>
+    </filter>
+    <filter uuid="00000001-0001-0001-0001-000000000035" id="35" src="DigitalVaccine">
+      <meta ips-version="3.0.0.1000 and after" ngfw-version="1.0.0.1000 and after" tps-version="4.0.0.1000 and after">
+        <name>IP Options: Loose Source Route (LSR)</name>
+        <description>This filter detects the Loose Source Route option (option number 3)
+described in RFC 791.
+
+IP options are rarely used by valid software applications, but
+are often used by attackers for malicious purposes. In general,
+any packets that carry IP options should be viewed as suspicious
+and denied at the firewall.
+
+The loose source route option was originally implemented so that
+the sender of a packet could avoid known bad routes.  The sender
+can specify the list of routers that must handle the packet as it
+traverses the network from source to destination.  The receiver
+is expected to set the same option list of routers (in reverse
+order) in the response packets. An attacker can use this option to
+route packets around security devices or to receive responses to
+spoofed packets. In the latter case, the response packets have the
+destination IP address set to the spoofed address, but the packets
+are routed according to the source route specification rather than
+the normal routing tables.  Thus the packets can be routed back to
+the attacker regardless of what IP address he is spoofing.
+
+Additionally, a specially crafted loose source routed ICMP packet can cause a exploitable condition to occur on some versions of Microsoft Windows.
+
+References:
+	http://www.securityfocus.com/bid/646
+
+Microsoft Security Bulletin MS06-032
+  http://www.microsoft.com/technet/security/bulletin/MS06-032.mspx</description>
+        <category>Network Equipment</category>
+        <severity>High</severity>
+        <deployments>
+          <deployment deployment="Default" active="false" actionset="Disabled"/>
+        </deployments>
+        <impacts>
+          <falsepositive id="1">False Positive potential for this filter is minimal to none.</falsepositive>
+          <performance id="1">This filter does not have any known performance impact issues.</performance>
+        </impacts>
+        <protocol taxonomy="ip">IP</protocol>
+      </meta>
+      <affected>
+        <products>
+          <product vendor="Microsoft" product="Terminal Server" version="">Microsoft Terminal Server</product>
+          <product vendor="Microsoft" product="Windows 95" version="0a">Microsoft Windows 95 0a</product>
+          <product vendor="Microsoft" product="Windows 95" version="0b">Microsoft Windows 95 0b</product>
+          <product vendor="Microsoft" product="Windows 98SE" version="">Microsoft Windows 98SE</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0">Microsoft Windows NT 4.0</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp3">Microsoft Windows NT 4.0 sp3</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp4">Microsoft Windows NT 4.0 sp4</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp2">Microsoft Windows NT 4.0 sp2</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp1">Microsoft Windows NT 4.0 sp1</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp5">Microsoft Windows NT 4.0 sp5</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp2" architecture="Datacenter Server">Microsoft Windows 2000 sp2 Datacenter Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp2" architecture="Professional">Microsoft Windows 2000 sp2 Professional</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp2" architecture="Advanced Server">Microsoft Windows 2000 sp2 Advanced Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp1" architecture="Datacenter Server">Microsoft Windows 2000 sp1 Datacenter Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp4" architecture="Datacenter Server">Microsoft Windows 2000 sp4 Datacenter Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" architecture="Professional">Microsoft Windows 2000 Professional</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" architecture="Datacenter Server">Microsoft Windows 2000 Datacenter Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" architecture="Server">Microsoft Windows 2000 Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" architecture="Advanced Server">Microsoft Windows 2000 Advanced Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp1" architecture="Advanced Server">Microsoft Windows 2000 sp1 Advanced Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp1" architecture="Professional">Microsoft Windows 2000 sp1 Professional</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp1" architecture="Server">Microsoft Windows 2000 sp1 Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp4" architecture="Server">Microsoft Windows 2000 sp4 Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp4" architecture="Advanced Server">Microsoft Windows 2000 sp4 Advanced Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp3" architecture="Professional">Microsoft Windows 2000 sp3 Professional</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp3" architecture="Datacenter Server">Microsoft Windows 2000 sp3 Datacenter Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp3" architecture="Server">Microsoft Windows 2000 sp3 Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp3" architecture="Advanced Server">Microsoft Windows 2000 sp3 Advanced Server</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp4" architecture="Professional">Microsoft Windows 2000 sp4 Professional</product>
+          <product vendor="Microsoft" product="Windows 2000" version="" update="sp2" architecture="Server">Microsoft Windows 2000 sp2 Server</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="datacenter_64-bit" update="sp1">Microsoft Windows 2003 Server datacenter_64-bit sp1</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="enterprise" update="sp1">Microsoft Windows 2003 Server enterprise sp1</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="enterprise" architecture="64Bit">Microsoft Windows 2003 Server enterprise 64Bit</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="enterprise_64-bit" update="sp1">Microsoft Windows 2003 Server enterprise_64-bit sp1</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="enterprise_64-bit">Microsoft Windows 2003 Server enterprise_64-bit</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="r2" architecture="64Bit">Microsoft Windows 2003 Server r2 64Bit</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="r2" update="sp1">Microsoft Windows 2003 Server r2 sp1</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="r2" architecture="Datacenter 64Bit">Microsoft Windows 2003 Server r2 Datacenter 64Bit</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="standard" update="sp1">Microsoft Windows 2003 Server standard sp1</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="standard" architecture="64Bit">Microsoft Windows 2003 Server standard 64Bit</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="standard_64-bit">Microsoft Windows 2003 Server standard_64-bit</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="web" update="sp1">Microsoft Windows 2003 Server web sp1</product>
+          <product vendor="Microsoft" product="Windows 2003 Server" version="web">Microsoft Windows 2003 Server web</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp2" architecture="Workstation">Microsoft Windows NT 4.0 sp2 Workstation</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp6" architecture="Workstation">Microsoft Windows NT 4.0 sp6 Workstation</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp6a" architecture="Workstation">Microsoft Windows NT 4.0 sp6a Workstation</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp5" architecture="Workstation">Microsoft Windows NT 4.0 sp5 Workstation</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" architecture="Enterprise Server">Microsoft Windows NT 4.0 Enterprise Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp3" architecture="Workstation">Microsoft Windows NT 4.0 sp3 Workstation</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp1" architecture="Workstation">Microsoft Windows NT 4.0 sp1 Workstation</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp4" architecture="Workstation">Microsoft Windows NT 4.0 sp4 Workstation</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp6" architecture="Server">Microsoft Windows NT 4.0 sp6 Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp6a" architecture="Server">Microsoft Windows NT 4.0 sp6a Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp6" architecture="Terminal Server">Microsoft Windows NT 4.0 sp6 Terminal Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp5" architecture="Terminal Server">Microsoft Windows NT 4.0 sp5 Terminal Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp5" architecture="Server">Microsoft Windows NT 4.0 sp5 Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp6" architecture="Enterprise Server">Microsoft Windows NT 4.0 sp6 Enterprise Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp5" architecture="Enterprise Server">Microsoft Windows NT 4.0 sp5 Enterprise Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp3" architecture="Terminal Server">Microsoft Windows NT 4.0 sp3 Terminal Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp4" architecture="Terminal Server">Microsoft Windows NT 4.0 sp4 Terminal Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp3" architecture="Server">Microsoft Windows NT 4.0 sp3 Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp6a" architecture="Terminal Server">Microsoft Windows NT 4.0 sp6a Terminal Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp1" architecture="Server">Microsoft Windows NT 4.0 sp1 Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp2" architecture="Terminal Server">Microsoft Windows NT 4.0 sp2 Terminal Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp1" architecture="Terminal Server">Microsoft Windows NT 4.0 sp1 Terminal Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp6a" architecture="Enterprise Server">Microsoft Windows NT 4.0 sp6a Enterprise Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp3" architecture="Enterprise Server">Microsoft Windows NT 4.0 sp3 Enterprise Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp2" architecture="Enterprise Server">Microsoft Windows NT 4.0 sp2 Enterprise Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp4" architecture="Enterprise Server">Microsoft Windows NT 4.0 sp4 Enterprise Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp1" architecture="Enterprise Server">Microsoft Windows NT 4.0 sp1 Enterprise Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" architecture="Terminal Server">Microsoft Windows NT 4.0 Terminal Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp2" architecture="Server">Microsoft Windows NT 4.0 sp2 Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" architecture="Workstation">Microsoft Windows NT 4.0 Workstation</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" architecture="Server">Microsoft Windows NT 4.0 Server</product>
+          <product vendor="Microsoft" product="Windows NT" version="4.0" update="sp4" architecture="Server">Microsoft Windows NT 4.0 sp4 Server</product>
+          <product vendor="Microsoft" product="Windows XP" version="" architecture="Media Center">Microsoft Windows XP Media Center</product>
+          <product vendor="Microsoft" product="Windows XP" version="" update="sp2" architecture="Tablet Pc">Microsoft Windows XP sp2 Tablet Pc</product>
+          <product vendor="Microsoft" product="Windows XP" version="" update="sp1" architecture="Media Center">Microsoft Windows XP sp1 Media Center</product>
+          <product vendor="Microsoft" product="Windows XP" version="" architecture="home">Microsoft Windows XP home</product>
+          <product vendor="Microsoft" product="Windows XP" version="" update="gold" architecture="Professional">Microsoft Windows XP gold Professional</product>
+          <product vendor="Microsoft" product="Windows XP" version="" update="sp2" architecture="home">Microsoft Windows XP sp2 home</product>
+          <product vendor="Microsoft" product="Windows XP" version="" architecture="64Bit">Microsoft Windows XP 64Bit</product>
+          <product vendor="Microsoft" product="Windows XP" version="" update="sp1" architecture="home">Microsoft Windows XP sp1 home</product>
+          <product vendor="Microsoft" product="Windows XP" version="" update="sp2" architecture="Media Center">Microsoft Windows XP sp2 Media Center</product>
+        </products>
+        <platforms>
+          <platform>Microsoft Windows 2000</platform>
+          <platform>Microsoft Windows 7</platform>
+          <platform>Microsoft Windows 8</platform>
+          <platform>Microsoft Windows 8.1</platform>
+          <platform>Microsoft Windows Server 2003</platform>
+          <platform>Microsoft Windows Server 2008</platform>
+          <platform>Microsoft Windows Server 2008 R2</platform>
+          <platform>Microsoft Windows Server 2012</platform>
+          <platform>Microsoft Windows Vista</platform>
+          <platform>Microsoft Windows XP</platform>
+        </platforms>
+      </affected>
+      <cves>
+        <cve id="CVE-1999-0510">
+          <base score="7.5" metric="AV:N/AC:L/Au:N/C:P/I:P/A:P"/>
+        </cve>
+        <cve id="CVE-1999-0909">
+          <base score="7.5" metric="AV:N/AC:L/Au:N/C:P/I:P/A:P"/>
+        </cve>
+        <cve id="CVE-2006-2379">
+          <base score="9.3" metric="AV:N/AC:M/Au:N/C:C/I:C/A:C"/>
+        </cve>
+      </cves>
+      <cpes>
+        <cpe>cpe:/a:microsoft:terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000:::advanced_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000:::datacenter_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000:::professional</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000:::server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp1:advanced_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp1:datacenter_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp1:professional</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp1:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp2:advanced_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp2:datacenter_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp2:professional</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp2:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp3:advanced_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp3:datacenter_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp3:professional</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp3:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp4:advanced_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp4:datacenter_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp4:professional</cpe>
+        <cpe>cpe:/o:microsoft:windows_2000::sp4:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:datacenter_64-bit:sp1</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:enterprise::64-bit</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:enterprise:sp1</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:enterprise_64-bit</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:enterprise_64-bit:sp1</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:r2::64-bit</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:r2::datacenter_64-bit</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:r2:sp1</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:standard::64-bit</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:standard:sp1</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:standard_64-bit</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:web</cpe>
+        <cpe>cpe:/o:microsoft:windows_2003_server:web:sp1</cpe>
+        <cpe>cpe:/o:microsoft:windows_95:0a</cpe>
+        <cpe>cpe:/o:microsoft:windows_95:0b</cpe>
+        <cpe>cpe:/o:microsoft:windows_98se</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0::enterprise_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0::server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0::terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0::workstation</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp1</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp1:enterprise_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp1:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp1:terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp1:workstation</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp2</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp2:enterprise_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp2:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp2:terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp2:workstation</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp3</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp3:enterprise_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp3:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp3:terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp3:workstation</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp4</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp4:enterprise_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp4:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp4:terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp4:workstation</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp5</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp5:enterprise_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp5:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp5:terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp5:workstation</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp6:enterprise_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp6:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp6:terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp6:workstation</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp6a:enterprise_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp6a:server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp6a:terminal_server</cpe>
+        <cpe>cpe:/o:microsoft:windows_nt:4.0:sp6a:workstation</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp:::64-bit</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp:::home</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp:::media_center</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp::gold:professional</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp::sp1:home</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp::sp1:media_center</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp::sp2:home</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp::sp2:media_center</cpe>
+        <cpe>cpe:/o:microsoft:windows_xp::sp2:tablet_pc</cpe>
+      </cpes>
+      <cwes>
+        <cwe id="119">Improper Restriction of Operations within the Bounds of a Memory Buffer</cwe>
+        <cwe id="264">Permissions, Privileges, and Access Controls</cwe>
+      </cwes>
+      <capecs>
+        <capec id="8">Buffer Overflow in an API Call</capec>
+        <capec id="9">Buffer Overflow in Local Command-Line Utilities</capec>
+        <capec id="10">Buffer Overflow via Environment Variables</capec>
+        <capec id="14">Client-side Injection-induced Buffer Overflow</capec>
+        <capec id="17">Accessing, Modifying or Executing Executable Files</capec>
+        <capec id="24">Filter Failure through Buffer Overflow</capec>
+        <capec id="35">Leverage Executable Code in Non-Executable Files</capec>
+        <capec id="44">Overflow Binary Resource File</capec>
+        <capec id="45">Buffer Overflow via Symbolic Links</capec>
+        <capec id="46">Overflow Variables and Tags</capec>
+        <capec id="47">Buffer Overflow via Parameter Expansion</capec>
+        <capec id="58">Restful Privilege Elevation</capec>
+        <capec id="69">Target Programs with Elevated Privileges</capec>
+        <capec id="76">Manipulating Web Input to File System Calls</capec>
+        <capec id="100">Overflow Buffers</capec>
+      </capecs>
+      <ovals>
+        <oval id="oval:org.mitre.oval:def:1585"/>
+        <oval id="oval:org.mitre.oval:def:1776"/>
+        <oval id="oval:org.mitre.oval:def:22538"/>
+        <oval id="oval:org.mitre.oval:def:1712"/>
+        <oval id="oval:org.mitre.oval:def:1483"/>
+        <oval id="oval:org.mitre.oval:def:1787"/>
+        <oval id="oval:org.mitre.oval:def:2018"/>
+      </ovals>
+      <references>
+        <advisory-url>http://securitytracker.com/id?1016290</advisory-url>
+        <advisory-url>http://www.us-cert.gov/cas/techalerts/TA06-164A.html</advisory-url>
+        <bid id="18374">http://www.securityfocus.com/bid/18374</bid>
+        <bid id="646">http://www.securityfocus.com/bid/646</bid>
+        <mssb id="MS06-032">https://technet.microsoft.com/library/security/ms06-032</mssb>
+        <mssb id="MS99-038">https://technet.microsoft.com/library/security/ms99-038</mssb>
+      </references>
+      <vulnerability>
+        <type>Malformed Data</type>
+        <type>Memory Overflow</type>
+        <locality>Remote</locality>
+        <result>Code Execution</result>
+      </vulnerability>
+    </filter>
+    <filter uuid="00000001-0001-0001-0001-000000000036" id="36" src="DigitalVaccine">
+      <meta ips-version="3.0.0.1000 and after" ngfw-version="1.0.0.1000 and after" tps-version="4.0.0.1000 and after">
+        <name>IP Options: Extended Security (E-SEC)</name>
+        <description>This filter detects the US Department of Defense Extended Security
+option (option number 5) described in RFC 1108.
+
+IP options are rarely used by valid software applications, but
+are often used by attackers for malicious purposes. In general,
+any packets that carry IP options should be viewed as suspicious
+and be denied at the firewall.
+
+Reference:
+
+RFC 1108
+  http://www.faqs.org/rfcs/rfc1108.html</description>
+        <category>Network Equipment</category>
+        <severity>Low</severity>
+        <deployments>
+          <deployment deployment="Default" active="false" actionset="Disabled"/>
+        </deployments>
+        <impacts>
+          <falsepositive id="1">False Positive potential for this filter is minimal to none.</falsepositive>
+          <performance id="1">This filter does not have any known performance impact issues.</performance>
+        </impacts>
+        <protocol taxonomy="ip">IP</protocol>
+      </meta>
+    </filter>
+    <filter uuid="00000001-0001-0001-0001-000000000038" id="38" src="DigitalVaccine">
+      <meta ips-version="3.0.0.1000 and after" ngfw-version="1.0.0.1000 and after" tps-version="4.0.0.1000 and after">
+        <name>IP Options: Stream ID (SID)</name>
+        <description>This filter detects the obsolete SATNET Stream ID option (option
+number 8) described in RFC 791. This option provides a way for a
+16-bit SATNET stream identifier to be carried through networks that
+do not support the stream concept.
+
+
+IP options are rarely used by valid software applications, but
+are often used by attackers for malicious purposes. In general,
+any packets that carry IP options should be viewed as suspicious
+and be denied at the firewall.</description>
+        <category>Network Equipment</category>
+        <severity>Low</severity>
+        <deployments>
+          <deployment deployment="Default" active="false" actionset="Disabled"/>
+        </deployments>
+        <impacts>
+          <falsepositive id="1">False Positive potential for this filter is minimal to none.</falsepositive>
+          <performance id="1">This filter does not have any known performance impact issues.</performance>
+        </impacts>
+        <protocol taxonomy="ip">IP</protocol>
+      </meta>
+    </filter>
